@@ -1,0 +1,19 @@
+{
+  "name": "ds-load",
+  "version": "1.0.0",
+  "description": "Load testing for Dominion Systems APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "docker composer run --rm k6 run /scripts/soakTest.bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andrewpayment/dsload.git"
+  },
+  "author": "Andrew Payment",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewpayment/dsload/issues"
+  },
+  "homepage": "https://github.com/andrewpayment/dsload#readme"
+}
