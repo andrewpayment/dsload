@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "ES6",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "paths": {
+      "@enums/*": [
+        "src/lib/enums/*"
+      ],
+      "@models/*": [
+        "src/lib/models/*"
+      ]
+    }
+  },
+  "include": ["src"],
+}

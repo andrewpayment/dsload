@@ -1,0 +1,46 @@
+import { EmployeeClientRate } from './employee-client-rate.model';
+import { Tax } from './tax.model';
+import { EmployeeOnboardingWorkflow } from './employee-onboarding-workflow.model';
+
+export interface AddEmployeeRequest {
+  employeeId: number;
+  clientId: number | null;
+  clientName: string;
+  firstName: string;
+  middleInitial: string;
+  lastName: string;
+  employeeNumber: string;
+  hireDate: Date | null;
+  dateOfBirth: Date | null;
+  employeeStatusId: number;
+  payFrequencyId: number;
+  payTypeId: number;
+  isOtExempt: boolean;
+  clockClientTimePolicyId: number | null;
+  employeeClientRates: EmployeeClientRate[];
+  salaryAmount: number | null;
+  userId: number;
+  username: string;
+  password: string;
+  email: string;
+  sutaState: Tax;
+  jobProfileId: number | null;
+  jobTitle: string;
+  clientDivisionId: number | null;
+  clientDepartmentId: number | null;
+  clientCostCenterId: number | null;
+  clientWorkersCompId: number | null;
+  clientGroupId: number | null;
+  clientShiftId: number | null;
+  EeocJobCategoryId: number | null;
+  EeocLocationId: number | null;
+  isFromAddEmployee: boolean | null;
+  isBenefitsEligibility: boolean | null;
+  benefitPackageId: number | null;
+  salaryMethodTypeId: number | null;
+  jobClass: string;
+  isBenefitPortalOn: boolean | null;
+  competencyModelId: number | null;
+  directSupervisorId: number | null;
+  employeeWorkflow: EmployeeOnboardingWorkflow[];
+}
