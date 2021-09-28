@@ -1,10 +1,9 @@
 import { Counter } from 'k6/metrics';
 import { Options } from 'k6/options';
-import { Store } from '../lib/helpers/store.helper';
-import { setSleep } from '../lib/helpers/sleep.helper';
-import { getUserInfo } from '../actions/user.actions';
-import { Cookies } from '@models/cookies.model';
-import { environment, setupHelper } from '../lib/helpers/setup.helper';
+import { environment, setupHelper } from '../../lib/helpers/setup.helper';
+import { Cookies } from '../../lib/models/cookies.model';
+import { getEmployeeTimePolicyConfiguration } from '../../actions/employees/employee.actions';
+import { setSleep } from '../../lib/helpers/sleep.helper';
 
 export let options: Partial<Options> = {
   vus: 3,
@@ -13,9 +12,9 @@ export let options: Partial<Options> = {
   thresholds: {
     'checks{checkTag:authentication}': ['rate>0.9'],
   },
-};
+}
 
-let numberOfUserInfoRetrieved = new Counter('NumberOfUserInfoRetrieved');
+let numberOfEETimePolicyConfigsRetrieved = new Counter("NumberOfEETimePolicyConfigsRetrieved");
 
 const API_URL = `${environment.baseUrl}/api`;
 
@@ -27,22 +26,16 @@ const API_URL = `${environment.baseUrl}/api`;
  * 
  * @returns Cookies
  */
-export function setup() {
+ export function setup() {
   return setupHelper();
 }
 
-// Main test entry point
 export default (authCookies: Cookies) => {
-  let res = getUserInfo(API_URL, authCookies);
+  let res = getEmployeeTimePolicyConfiguration(API_URL, authCookies, environment.testUser.lastEmployeeId);
   
   setSleep();
   
   if (res.status === 200 && res.json()) {
-    numberOfUserInfoRetrieved.add(true);
+    numberOfEETimePolicyConfigsRetrieved.add(true);
   }
-};
-
-export function teardown() {
-  // add stuff to do after the test is done, like deleting any temp files, etc...
-  Store.dispose();
 }

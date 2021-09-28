@@ -1,6 +1,9 @@
 import { EmployeeClientRate } from './employee-client-rate.model';
 import { Tax } from './tax.model';
 import { EmployeeOnboardingWorkflow } from './employee-onboarding-workflow.model';
+import { ClientDepartment } from './client-department.model';
+import { User } from './user.model';
+import { UserType } from '@enums/user-type.enum';
 
 export interface AddEmployeeRequest {
   employeeId: number;
@@ -43,4 +46,35 @@ export interface AddEmployeeRequest {
   competencyModelId: number | null;
   directSupervisorId: number | null;
   employeeWorkflow: EmployeeOnboardingWorkflow[];
+}
+
+export interface EmployeeContactResult {
+  employeeId: number;
+  employeeNumber: string;
+  employeeStatusType: number;
+  clientId: number;
+  competencyModel: number;
+  costCenter: number;
+  cellPhoneNumber: string;
+  directSupervisor: string;
+  division: number;
+  department: ClientDepartment;
+  emailAddress: string;
+  employeeAvatar: any;
+  firstName: string;
+  middleInitial: string;
+  lastName: string;
+  isActive: boolean;
+  isTemp: boolean;
+  jobTitle: string;
+  jobTitleId: number;
+  payType: any;
+  profileImage: any; 
+  reviewTemplates: number[];
+  separationDate: Date | null;
+  supervisopr: User;
+  supervisorName: string;
+  terminationReason: any;
+  userId: number | null;
+  userType: UserType;
 }

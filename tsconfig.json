@@ -1,15 +1,22 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "target": "ES6",
+    "target": "ES5",
     "moduleResolution": "node",
+    "module": "commonjs",
+    "strict": true,
+    
     "allowJs": true,
     "noEmit": true,
-    "strict": true,
+    "noImplicitThis": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "noImplicitThis": true,
     "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    
     "paths": {
       "@enums/*": [
         "src/lib/enums/*"
@@ -17,7 +24,10 @@
       "@models/*": [
         "src/lib/models/*"
       ]
-    }
+    },
+    "typeRoots": [
+      "src/types"
+    ]
   },
   "include": ["src"],
 }

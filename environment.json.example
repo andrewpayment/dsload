@@ -1,0 +1,33 @@
+{
+  "baseUrl": "https://staging-01/payroll",
+  "testUser": {
+    "firstName": "Andrew",
+    "lastName": "Payment",
+    "userName": "paymean",
+    "password": "",
+    "middleInitial": "",
+    "userId": "",
+    "authUserId": "",
+    "employeId": "",
+    "clientId": "",
+    "clientName": "",
+    "clientCode": "",
+    "userTypeId": "",
+    "lastEmployeeId": "",
+    "lastEmployeeFirstName": "",
+    "lastEmployeeMiddleInitial": "",
+    "lastEmployeeLastName": "",
+    "lastClientId": "",
+    "lastClientName": "",
+    "lastClientCode": "",
+    "emailAddress": "",
+    "timeoutMinutes": "",
+    "isInOnboarding": "",
+    "certifyI9": "",
+    "addEmployee": "",
+    "isBillingAdmin": "",
+    "isEmployeeSelfServiceViewOnly": "",
+    "isArAdmin": "",
+    "isPayrollAccessBlocked": ""
+  }
+}

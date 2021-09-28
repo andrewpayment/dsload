@@ -12,6 +12,8 @@ module.exports = {
   entry: {
     soakTest: "./src/tests/soak.test.ts",
     getUsersTest: "./src/tests/get-user.test.ts",
+    employeeSearchTest: "./src/tests/employees/employees-search.test.ts",
+    getEmployeeTimePolicyConfiguration: "./src/tests/employees/get-employee-time-policy-config.test.ts",
   },
   output: {
     path: path.resolve(__dirname, "dist"),

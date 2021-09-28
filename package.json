@@ -9,14 +9,18 @@
   "scripts": {
     "check-types": "tsc",
     "check-types:watch": "tsc --watch",
-    "monitors": "docker-compose up -d influxdb grafana",
+    "monitors": "docker compose up -d influxdb grafana",
     "build": "webpack",
-    "test": "docker-compose run --rm k6 run /scripts/soakTest.bundle.js",
-    "go:docker": "yarn build && yarn test",
-    "go:k6": "yarn build && k6 run dist/soakTest.bundle.js",
+    "go:tests:soak": "yarn build && k6 run dist/soakTest.bundle.js",
     "go:tests:userinfo": "yarn build && k6 run dist/getUsersTest.bundle.js",
-    "tests:userinfo": "docker-compose run --rm k6 run /scripts/getUsersTest.bundle.js",
-    "go:docker:userinfo": "yarn build && yarn tests:userinfo"
+    "go:tests:employeeSearch": "yarn build && k6 run dist/employeeSearchTest.bundle.js",
+    "go:tests:getEmployeeTimePolicyConfiguration": "yarn build && k6 run dist/getEmployeeTimePolicyConfiguration.bundle.js",
+    "docker": "yarn build && yarn docker:tests:soak",
+    "docker:tests:soak": "docker compose run --rm k6 run /scripts/soakTest.bundle.js",
+    "docker:tests:userinfo": "docker compose run --rm k6 run /scripts/getUsersTest.bundle.js",
+    "docker:tests:employeeSearch": "docker compose run --rm k6 run /scripts/employeeSearchTest.bundle.js",
+    "docker:tests:getEmployeeTimePolicyConfiguration": "docker compose run --rm k6 run /scripts/getEmployeeTimePolicyConfiguration.bundle.js",
+    "docker:userinfo": "yarn build && yarn docker:tests:userinfo"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
