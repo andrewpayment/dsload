@@ -14,6 +14,7 @@ module.exports = {
     getUsersTest: "./src/tests/get-user.test.ts",
     employeeSearchTest: "./src/tests/employees/employees-search.test.ts",
     getEmployeeTimePolicyConfiguration: "./src/tests/employees/get-employee-time-policy-config.test.ts",
+    getCostCenterSelectionRequired: "./src/tests/clock/get-cost-center-required.test.ts",
   },
   output: {
     path: path.resolve(__dirname, "dist"),

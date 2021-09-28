@@ -22,7 +22,12 @@
         "src/lib/enums/*"
       ],
       "@models/*": [
+        "src/lib/models/**/*",
         "src/lib/models/*"
+      ],
+      "@helpers/*": [
+        "src/lib/helpers/**/*",
+        "src/lib/helpers/*"
       ]
     },
     "typeRoots": [

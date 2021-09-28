@@ -15,11 +15,13 @@
     "go:tests:userinfo": "yarn build && k6 run dist/getUsersTest.bundle.js",
     "go:tests:employeeSearch": "yarn build && k6 run dist/employeeSearchTest.bundle.js",
     "go:tests:getEmployeeTimePolicyConfiguration": "yarn build && k6 run dist/getEmployeeTimePolicyConfiguration.bundle.js",
+    "go:tests:getCostCenterSelectionRequired": "yarn build && k6 run dist/getCostCenterSelectionRequired.bundle.js",
     "docker": "yarn build && yarn docker:tests:soak",
     "docker:tests:soak": "docker compose run --rm k6 run /scripts/soakTest.bundle.js",
     "docker:tests:userinfo": "docker compose run --rm k6 run /scripts/getUsersTest.bundle.js",
     "docker:tests:employeeSearch": "docker compose run --rm k6 run /scripts/employeeSearchTest.bundle.js",
     "docker:tests:getEmployeeTimePolicyConfiguration": "docker compose run --rm k6 run /scripts/getEmployeeTimePolicyConfiguration.bundle.js",
+    "docker:tests:getCostCenterSelectionRequired": "docker compose run --rm k6 run /scripts/getCostCenterSelectionREquired.bundle.js",
     "docker:userinfo": "yarn build && yarn docker:tests:userinfo"
   },
   "devDependencies": {

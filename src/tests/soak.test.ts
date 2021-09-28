@@ -4,6 +4,7 @@ import { Cookies } from '@models/cookies.model';
 import { setupHelper } from '../lib/helpers/setup.helper';
 import employeeSearchTest from './employees/employees-search.test';
 import getEmployeeTimePolicyConfiguration from './employees/get-employee-time-policy-config.test';
+import getCostCenterSelectionRequired from './clock/get-cost-center-required.test';
 
 export let options: Partial<Options> = {
   // number of virtual users
@@ -45,5 +46,6 @@ export default function(authCookies: Cookies) {
   getUserTest(authCookies);
   employeeSearchTest(authCookies);
   getEmployeeTimePolicyConfiguration(authCookies);
+  getCostCenterSelectionRequired(authCookies);
 }
 
